@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "1086411047442",
+    "firebase_url": "https://open-source-3b95f.firebaseio.com",
+    "project_id": "open-source-3b95f",
+    "storage_bucket": "open-source-3b95f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086411047442:android:11fb0a76082118475c4ecb",
+        "android_client_info": {
+          "package_name": "com.jayc.openfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1086411047442-d1mp7rvo6gfcb0f3kc9ukq11uh8ss0q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDpGDqD0Dh21LP9c-hFw85FsgbaVybxys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1086411047442-d1mp7rvo6gfcb0f3kc9ukq11uh8ss0q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086411047442:android:1f7e5dbc4dd99c415c4ecb",
+        "android_client_info": {
+          "package_name": "com.jayc.opensource"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1086411047442-d1mp7rvo6gfcb0f3kc9ukq11uh8ss0q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDpGDqD0Dh21LP9c-hFw85FsgbaVybxys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1086411047442-d1mp7rvo6gfcb0f3kc9ukq11uh8ss0q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086411047442:android:88ce2737aa4741bf5c4ecb",
+        "android_client_info": {
+          "package_name": "com.jayc.testrecycler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1086411047442-d1mp7rvo6gfcb0f3kc9ukq11uh8ss0q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDpGDqD0Dh21LP9c-hFw85FsgbaVybxys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1086411047442-d1mp7rvo6gfcb0f3kc9ukq11uh8ss0q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Open Finder</string>
+
+    <string name="toolbar_text">Hello, User</string>
+    <string name="toolbar_logo">logo</string>
+    <string name="news">News</string>
+    <string name="categories_text">Categories</string>
+    <string name="home_bottombar">home</string>
+    <string name="add_bottombar">add</string>
+    <string name="search_bottombar">search</string>
+    <string name="add_heading">Add Data</string>
+    <string name="add_data_greeting">We Appreciate that you considered to give your inputs for our Project!</string>
+    <string name="enter_app_name_here">Enter App Name Here</string>
+    <string name="enter_alternate_app_name_here">Enter Alternate App Name Here</string>
+    <string name="submit_btn_text">SUBMIT</string>
+    <string name="review_text">Review</string>
+    <string name="review_greeting">We Appreciate the Review and We will Develop further using these valuable inputs.</string>
+    <string name="enter_your_name_here">Enter Your Name Here</string>
+    <string name="enter_your_suggestions_here">Enter Your Suggestions Here</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_add_data">Add Data</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_credits">Credits</string>
+    <string name="menu_review">Review</string>
+    <string name="credits">Credits</string>
+    <string name="credit_development">App Development</string>
+    <string name="credit_design">App Design</string>
+    <string name="credit_research">Database Research</string>
+    <string name="jay_chaudhari">Jay Chaudhari</string>
+    <string name="jayesh_bafana">Jayesh Bafana</string>
+    <string name="diptesh_chaudhari">Diptesh Chaudhari</string>
+    <string name="source_code_text">Source Code -</string>
+    <string name="software_name">SOFTWARE NAME</string>
+    <string name="software_description_text">Here will come the description of the software</string>
+    <string name="download_link">download link</string>
+    <string name="download_link_text">Download Link -</string>
+    <string name="source_code_link">source code link</string>
+    <string name="software_logo">software logo</string>
+    <string name="software_rating_text">Rating -</string>
+    <string name="software_heading">Softwares</string>
+
+</resources>
