@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewPager: ViewPager
 
     private lateinit var add_data_icon: ImageView
+    private lateinit var searchIcon: ImageView
 
     private lateinit var mToolbar: androidx.appcompat.widget.Toolbar
 
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         mToolbar = findViewById(R.id.toolbar)
         mToolbar.title = ""
@@ -59,6 +62,10 @@ class MainActivity : AppCompatActivity() {
         add_data_icon.setOnClickListener {
             openAddActivity()
         }
+        searchIcon = findViewById(R.id.search_icon)
+        searchIcon.setOnClickListener {
+            openSearchActivity()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -67,14 +74,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item?.itemId
+        val id = item.itemId
         when (id) {
             R.id.menu_add ->
                 openAddActivity()
             R.id.menu_home ->
                 Toast.makeText(this, item.title.toString(), Toast.LENGTH_SHORT).show()
             R.id.menu_search ->
-                Toast.makeText(this, item.title.toString(), Toast.LENGTH_SHORT).show()
+                openSearchActivity()
             R.id.menu_credit ->
                 openCreditActivity()
             R.id.menu_review ->
@@ -103,7 +110,6 @@ class MainActivity : AppCompatActivity() {
                     categoryAdapter.notifyDataSetChanged()
                 }
             })
-
     }
 
     private fun initviewPager() {
@@ -125,6 +131,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun openCreditActivity() {
         val intent = Intent(this, CreditActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun openSearchActivity() {
+        val intent = Intent(this, SearchActivity::class.java)
         startActivity(intent)
     }
 }

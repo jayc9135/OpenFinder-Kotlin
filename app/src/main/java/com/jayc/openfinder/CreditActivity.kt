@@ -10,6 +10,7 @@ class CreditActivity : AppCompatActivity() {
     private lateinit var back_btn: ImageView
     private lateinit var home_btn: ImageView
     private lateinit var add_data_icon: ImageView
+    private lateinit var searchIcon: ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +29,10 @@ class CreditActivity : AppCompatActivity() {
         add_data_icon.setOnClickListener {
             openAddActivity()
         }
+        searchIcon = findViewById(R.id.search_icon)
+        searchIcon.setOnClickListener {
+            openSearchActivity()
+        }
     }
 
     private fun goHome() {
@@ -37,6 +42,11 @@ class CreditActivity : AppCompatActivity() {
 
     private fun openAddActivity() {
         val intent = Intent(this, AddDataActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun openSearchActivity() {
+        val intent = Intent(this, SearchActivity::class.java)
         startActivity(intent)
     }
 }

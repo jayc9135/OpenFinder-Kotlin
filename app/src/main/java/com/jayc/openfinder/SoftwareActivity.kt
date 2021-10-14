@@ -6,13 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.*
-import com.jayc.openfinder.adapters.CategoryAdapter
 import com.jayc.openfinder.adapters.SoftwareAdapter
-import com.jayc.openfinder.models.Category
 import com.jayc.openfinder.models.Software
 
 class SoftwareActivity : AppCompatActivity() {
@@ -27,6 +24,7 @@ class SoftwareActivity : AppCompatActivity() {
     private lateinit var back_btn: ImageView
     private lateinit var home_btn: ImageView
     private lateinit var add_data_icon: ImageView
+    private lateinit var searchIcon: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +50,10 @@ class SoftwareActivity : AppCompatActivity() {
         }
         home_btn.setOnClickListener {
             goHome()
+        }
+        searchIcon = findViewById(R.id.search_icon)
+        searchIcon.setOnClickListener {
+            openSearchActivity()
         }
     }
 
@@ -92,6 +94,11 @@ class SoftwareActivity : AppCompatActivity() {
 
     private fun goHome() {
         val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun openSearchActivity() {
+        val intent = Intent(this, SearchActivity::class.java)
         startActivity(intent)
     }
 }

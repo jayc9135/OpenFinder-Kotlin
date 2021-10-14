@@ -38,5 +38,9 @@
     <string name="software_logo">software logo</string>
     <string name="software_rating_text">Rating -</string>
     <string name="software_heading">Softwares</string>
+    <string name="search_here">Search Here</string>
+    <string name="button">Button</string>
+    <string name="searchbtn">searchBtn</string>
+    <string name="search_text">Search</string>
 
 </resources>

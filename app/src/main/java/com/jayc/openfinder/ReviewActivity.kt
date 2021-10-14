@@ -16,6 +16,7 @@ class ReviewActivity : AppCompatActivity() {
     private lateinit var review_stars: RatingBar
     private lateinit var review_suggestion_input: EditText
     private lateinit var add_data_icon: ImageView
+    private lateinit var searchIcon: ImageView
 
     private var database = Firebase.database
 
@@ -39,6 +40,10 @@ class ReviewActivity : AppCompatActivity() {
         add_data_icon = findViewById(R.id.add_icon)
         add_data_icon.setOnClickListener {
             openAddActivity()
+        }
+        searchIcon = findViewById(R.id.search_icon)
+        searchIcon.setOnClickListener {
+            openSearchActivity()
         }
 
         val myRef = database.getReference("Ratings-Kotlin")
@@ -70,6 +75,11 @@ class ReviewActivity : AppCompatActivity() {
 
     private fun openAddActivity() {
         val intent = Intent(this, AddDataActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun openSearchActivity() {
+        val intent = Intent(this, SearchActivity::class.java)
         startActivity(intent)
     }
 }

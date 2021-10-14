@@ -17,6 +17,7 @@ class AddDataActivity : AppCompatActivity() {
     private lateinit var submit_btn: Button
     private lateinit var app_input: EditText
     private lateinit var alt_input: EditText
+    private lateinit var searchIcon: ImageView
 
     private var database = Firebase.database
 
@@ -36,6 +37,10 @@ class AddDataActivity : AppCompatActivity() {
         }
         home_btn.setOnClickListener {
             goHome()
+        }
+        searchIcon = findViewById(R.id.search_icon)
+        searchIcon.setOnClickListener {
+            openSearchActivity()
         }
 
         val myRef = database.getReference("UserInput-Kotlin")
@@ -57,6 +62,11 @@ class AddDataActivity : AppCompatActivity() {
 
     private fun goHome() {
         val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun openSearchActivity() {
+        val intent = Intent(this, SearchActivity::class.java)
         startActivity(intent)
     }
 
