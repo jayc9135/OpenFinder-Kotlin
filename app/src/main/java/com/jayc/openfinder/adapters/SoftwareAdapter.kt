@@ -29,6 +29,7 @@ class SoftwareAdapter(private val context: Context, private val softwareList: Ar
         holder.description.text = software.description
         holder.downloadlink.text = software.downloadlink
         holder.sourcecode.text = software.sourcecode
+        holder.rating.rating = software.rating!!.toFloat()
         val imageUrl = software.descriptionImage
         if (imageUrl != null) {
             holder.bind(software, imageUrl)
