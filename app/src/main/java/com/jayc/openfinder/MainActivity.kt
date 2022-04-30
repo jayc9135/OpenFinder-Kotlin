@@ -10,15 +10,19 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.google.firebase.firestore.*
 import com.jayc.openfinder.adapters.CategoryAdapter
+import com.jayc.openfinder.adapters.NewsHeadlineAdapter
 import com.jayc.openfinder.adapters.ViewPagerAdapter
 import com.jayc.openfinder.models.Category
+import com.jayc.openfinder.models.NewsApiResponse
+import com.jayc.openfinder.models.NewsHeadlines
+import com.jayc.openfinder.models.OnFetchDataListener
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var recyclerView: RecyclerView
     private lateinit var categoryArrayList: ArrayList<Category>
     private lateinit var categoryAdapter: CategoryAdapter
@@ -31,10 +35,17 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var mToolbar: androidx.appcompat.widget.Toolbar
 
+    private lateinit var newsHeadlineRecyclerView: RecyclerView
+    private lateinit var newsHeadlineAdapter: NewsHeadlineAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //FOR API
+        var manager: RequestManager = RequestManager(this)
+        manager.getNewsHeadlines(listener, "technology", null)
+
 
         mToolbar = findViewById(R.id.toolbar)
         mToolbar.title = ""
@@ -52,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         getData()
 
-        initviewPager()
+//        initviewPager()
 
         add_data_icon = findViewById(R.id.add_icon)
         add_data_icon.setOnClickListener {
@@ -108,12 +119,11 @@ class MainActivity : AppCompatActivity() {
             })
     }
 
-    private fun initviewPager() {
-        viewPager = findViewById<ViewPager>(R.id.viewPager)
-//        sliderDotsPanel = findViewById<LinearLayout>(R.id.SliderDots)
-        viewPager.adapter = ViewPagerAdapter(this)
-//        dotscount = viewPagerA
-    }
+//    private fun initviewPager() {
+//        viewPager = findViewById<ViewPager>(R.id.viewPager)
+//        viewPager.adapter = ViewPagerAdapter(this)
+//
+//    }
 
     private fun openAddActivity() {
         val intent = Intent(this, AddDataActivity::class.java)
@@ -134,4 +144,21 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, SearchActivity::class.java)
         startActivity(intent)
     }
+
+    inner class OnFetchListener: OnFetchDataListener<NewsApiResponse> {
+        override fun onFetchData(list: MutableList<NewsHeadlines>?, message: String?) {
+            newsHeadlineRecyclerView = findViewById(R.id.news_recyclerview)
+            newsHeadlineRecyclerView.setHasFixedSize(true)
+            newsHeadlineRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
+            newsHeadlineAdapter = list?.let { NewsHeadlineAdapter(this@MainActivity, it) }!!
+            newsHeadlineRecyclerView.adapter = newsHeadlineAdapter
+        }
+
+        override fun onError(message: String?) {
+
+        }
+    }
+
+
+    private var listener: OnFetchDataListener<NewsApiResponse> = OnFetchListener()
 }

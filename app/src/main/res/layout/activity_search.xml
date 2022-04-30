@@ -54,7 +54,9 @@
                 android:background="@drawable/edittextback"
                 android:hint="@string/search_here"
                 android:queryHint="Search Here"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:maxLines="1"
+                android:inputType="text"/>
 
             <ImageButton
                 android:id="@+id/search_button"

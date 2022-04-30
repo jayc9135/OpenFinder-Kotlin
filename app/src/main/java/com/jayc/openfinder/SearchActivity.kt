@@ -5,10 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
+import android.view.*
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -68,6 +65,21 @@ class SearchActivity : AppCompatActivity() {
         add_data_icon.setOnClickListener {
             openAddActivity()
         }
+
+        searchBar.setOnClickListener {
+            searchEnter()
+        }
+
+    }
+
+    private fun searchEnter(){
+        searchBar.setOnKeyListener(View.OnKeyListener {v, keyCode, event ->
+            if(keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP){
+                searchApp(searchBar.text.toString().lowercase())
+                return@OnKeyListener true
+            }
+            false
+        })
     }
 
     private fun retrieveAllItems() {

@@ -43,4 +43,6 @@
     <string name="searchbtn">searchBtn</string>
     <string name="search_text">Search</string>
 
+    <string name="api_key">c5d6a7aef72149ef9884b446568339ff</string>
+
 </resources>
